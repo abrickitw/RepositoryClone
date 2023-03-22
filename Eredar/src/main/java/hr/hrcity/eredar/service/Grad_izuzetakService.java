@@ -1,6 +1,5 @@
 package hr.hrcity.eredar.service;
 
-import hr.hrcity.eredar.exception.ResourceNotFoundException;
 import hr.hrcity.eredar.model.Grad_izuzetak;
 
 public interface Grad_izuzetakService {
@@ -16,3 +15,4 @@ public interface Grad_izuzetakService {
 	void deleteEntity(long entityId);
 
 }
+//

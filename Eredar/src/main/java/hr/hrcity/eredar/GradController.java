@@ -1,4 +1,4 @@
-package hr.hrcity.eredar.restcontroller;
+package hr.hrcity.eredar;
 
 import javax.servlet.http.HttpSession;
 
