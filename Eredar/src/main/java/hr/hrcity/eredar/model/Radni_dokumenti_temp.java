@@ -17,7 +17,7 @@ public class Radni_dokumenti_temp {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id_predlozak;
 	
-	@Column
+	@Column  
 	private int id_upravitelj;
 	
 	@Column
