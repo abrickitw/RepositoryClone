@@ -1,6 +1,4 @@
 package hr.hrcity.eredar.service;
-
-
 import java.util.Optional;
 
 import javax.persistence.EntityManagerFactory;

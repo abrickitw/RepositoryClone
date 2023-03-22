@@ -13,5 +13,4 @@ public interface Grad_izuzetakService {
 	Grad_izuzetak getEntityById(long entityId);
 
 	void deleteEntity(long entityId);
-
 }
