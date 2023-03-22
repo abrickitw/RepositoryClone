@@ -14,7 +14,6 @@ import hr.hrcity.eredar.exception.ResourceNotFoundException;
 import hr.hrcity.eredar.model.Grad_izuzetak;
 import hr.hrcity.eredar.repository.Grad_izuzetakRepository;
 
-
 @Service
 @Transactional
 public class Grad_izuzetakServiceImpl implements Grad_izuzetakService {
