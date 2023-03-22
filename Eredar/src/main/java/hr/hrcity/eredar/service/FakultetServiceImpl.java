@@ -9,32 +9,33 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import hr.hrcity.eredar.exception.ResourceNotFoundException;
-import hr.hrcity.eredar.model.Error_log;
-import hr.hrcity.eredar.repository.Error_logRepository;
+import hr.hrcity.eredar.model.Fakultet;
+import hr.hrcity.eredar.repository.FakultetRepository;
 
 
 @Service
 @Transactional
-public class Error_logServiceImpl implements Error_logService {
+public class FakultetServiceImpl implements FakultetService {
 
 	@Autowired
-	private Error_logRepository dataRepository;
+	private FakultetRepository dataRepository;
 
 	@Autowired
 	EntityManagerFactory emf;
 
 	@Override
-	public Error_log createEntity(Error_log data) {
+	public Fakultet createEntity(Fakultet data) {
 		return dataRepository.save(data);
 	}
 
 	@Override
-	public Error_log updateEntity(Error_log data) throws ResourceNotFoundException {
-		Optional<Error_log> productDb = this.dataRepository.findById(data.getId_error());
+	public Fakultet updateEntity(Fakultet data) throws ResourceNotFoundException {
+		Optional<Fakultet> productDb = this.dataRepository.findById(data.getId());
 
 		if (productDb.isPresent()) {
-			Error_log dataUpdate = productDb.get();
-			dataUpdate.setOpis(data.getOpis());
+			Fakultet dataUpdate = productDb.get();
+			dataUpdate.setNaziv(data.getNaziv());
+			dataUpdate.setStudij(data.getStudij());
 			dataRepository.save(dataUpdate);
 			return dataUpdate;
 		} else {
@@ -43,28 +44,28 @@ public class Error_logServiceImpl implements Error_logService {
 	}
 
 	@Override
-	public Iterable<Error_log> getAllEntity() {
+	public Iterable<Fakultet> getAllEntity() {
 		return this.dataRepository.findAllEntity();
 	}
 
 	@Override
-	public Error_log getEntityById(long entityId) {
+	public Fakultet getEntityById(Integer entityId) {
 
 		if (entityId == 0)
-			return new Error_log();
+			return new Fakultet();
 
-		Optional<Error_log> productDb = this.dataRepository.findById(entityId);
+		Optional<Fakultet> productDb = this.dataRepository.findById(entityId);
 
 		if (productDb.isPresent()) {
 			return productDb.get();
 		} else {
-			return new Error_log();
+			return new Fakultet();
 		}
 	}
 
 	@Override
-	public void deleteEntity(long entityId) {
-		Optional<Error_log> productDb = this.dataRepository.findById(entityId);
+	public void deleteEntity(Integer entityId) {
+		Optional<Fakultet> productDb = this.dataRepository.findById(entityId);
 
 		if (productDb.isPresent()) {
 			this.dataRepository.delete(productDb.get());
