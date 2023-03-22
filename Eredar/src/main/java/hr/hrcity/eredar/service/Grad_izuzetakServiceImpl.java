@@ -72,7 +72,5 @@ public class Grad_izuzetakServiceImpl implements Grad_izuzetakService {
 		}
 
 	}
-
-
 }
 
